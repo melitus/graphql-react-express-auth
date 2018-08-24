@@ -3,8 +3,25 @@ import { ApolloServer } from 'apollo-server-express';
 
 const app = express();
 
-const schema = ...
-const resolvers = ...
+const schema =`
+  type Query {
+    me: User
+  }
+
+  type User {
+    username: String!
+  }
+`;
+
+const resolvers = {
+  Query: {
+    me: () => {
+      return {
+        username: 'santino',
+      };
+    },
+  },
+};
 
 const server = new ApolloServer({
   typeDefs: schema,
