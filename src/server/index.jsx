@@ -1,25 +1,42 @@
 import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
+import cors from 'cors';
 
 const app = express();
 
+app.use(cors());
+
+// The GraphQL schema
 const schema =`
   type Query {
+    users: [User!]
+    user(id: ID!): User
     me: User
+
   }
 
   type User {
+    id: ID!
     username: String!
   }
 `;
 
+// A map of functions which return data for the schema.
 const resolvers = {
   Query: {
+    users: () => {
+      return Object.values(users);
+    },
     me: () => {
       return {
-        username: 'santino',
+        username: 'santino melitus',
       };
     },
+    user: () => {
+      return{
+        username: 'sunday aroh'
+      }
+    }
   },
 };
 
