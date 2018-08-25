@@ -27,3 +27,6 @@ export default gql`
     messages: [Message!]
   }
 `;
+
+
+// Note extend keyword is used to avoid large list of queries on the Query or Mutation Object.
