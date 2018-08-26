@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node index.jsx"
+    "start": "nodemon --exec babel-node src/index.jsx"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +19,9 @@
     "express": "^4.16.3",
     "graphql": "^0.13.2",
     "graphql-resolvers": "^0.2.2",
-    "jsonwebtoken": "^8.3.0"
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.2.9",
+    "mongoose-paginate": "^5.0.3"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
